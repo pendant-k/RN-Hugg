@@ -30,7 +30,62 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            {
+              "asset": "./assets/fonts/Pretendard-Thin.otf",
+              "name": "Pretendard-Thin"
+            },
+            {
+              "asset": "./assets/fonts/Pretendard-Light.otf",
+              "name": "Pretendard-Light"
+            },
+            {
+              "asset": "./assets/fonts/Pretendard-ExtraLight.otf",
+              "name": "Pretendard-ExtraLight"
+            },
+            {
+              "asset": "./assets/fonts/Pretendard-Regular.otf",
+              "name": "Pretendard-Regular"
+            },
+            {
+              "asset": "./assets/fonts/Pretendard-Medium.otf",
+              "name": "Pretendard-Medium"
+            },
+            {
+              "asset": "./assets/fonts/Pretendard-SemiBold.otf",
+              "name": "Pretendard-SemiBold"
+            },
+            {
+              "asset": "./assets/fonts/Pretendard-Bold.otf",
+              "name": "Pretendard-Bold"
+            },
+            {
+              "asset": "./assets/fonts/Pretendard-ExtraBold.otf",
+              "name": "Pretendard-ExtraBold"
+            },
+            {
+              "asset": "./assets/fonts/Pretendard-Black.otf",
+              "name": "Pretendard-Black"
+            },
+            {
+              "asset": "./assets/fonts/GmarketSansMedium.otf",
+              "name": "GmarketSansMedium"
+            },
+            {
+              "asset": "./assets/fonts/GmarketSansBold.otf",
+              "name": "GmarketSansBold"
+            },
+            {
+              "asset": "./assets/fonts/GmarketSansLight.otf",
+              "name": "GmarketSansLight"
+            }
+          ]
+        }]
+
     ],
     "experiments": {
       "typedRoutes": true

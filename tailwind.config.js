@@ -5,6 +5,23 @@ module.exports = {
     presets: [require("nativewind/preset")],
     theme: {
         extend: {
+            fontFamily: {
+                "pretendard-thin": ["Pretendard-Thin", "sans-serif"],
+                "pretendard-light": ["Pretendard-Light", "sans-serif"],
+                "pretendard-extralight": [
+                    "Pretendard-ExtraLight",
+                    "sans-serif",
+                ],
+                "pretendard-regular": ["Pretendard-Regular", "sans-serif"],
+                "pretendard-medium": ["Pretendard-Medium", "sans-serif"],
+                "pretendard-semibold": ["Pretendard-SemiBold", "sans-serif"],
+                "pretendard-bold": ["Pretendard-Bold", "sans-serif"],
+                "pretendard-extrabold": ["Pretendard-ExtraBold", "sans-serif"],
+                "pretendard-black": ["Pretendard-Black", "sans-serif"],
+                "gmarket-medium": ["GmarketSansMedium", "sans-serif"],
+                "gmarket-bold": ["GmarketSansBold", "sans-serif"],
+                "gmarket-light": ["GmarketSansLight", "sans-serif"],
+            },
             colors: {
                 main: {
                     normal: "#84D1BF",
