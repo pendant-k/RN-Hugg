@@ -37,6 +37,12 @@ module.exports = {
                     calendar_hospital: "#E2F7D6",
                     calendar_etc: "#FEF7CE",
                 },
+                status: {
+                    update_notification: "#FF786E",
+                    destructive: "#FF786E",
+                    disabled: "#F2F2F2",
+                    btn_disabled: "#DAEDE8",
+                },
             },
         },
     },
