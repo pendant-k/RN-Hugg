@@ -3,10 +3,16 @@ Nativewind + Expo font
 NativeWind와 Expo Fonts로 커스텀폰트 설정하기
 > 블로그 정리 (퇴근 길에 정리 + 귀가 후 포스팅)
 
+# Check
+- [ ] 일반 아이폰에서도 정상동작하는지 확인
+- [ ] 16E
+- [ ] SE3
+
 # Global
 - [ ] React Query 세팅
 - [ ] Api Service Layer 구현
 - [ ] entities (DTO, VO)
+- [x] Text 컴포넌트 설정
 
 # Splash
 - [x] Splash Screen 구현
@@ -34,5 +40,4 @@ NativeWind와 Expo Fonts로 커스텀폰트 설정하기
 
 > 풀스택 강의 참고 (Onboarding 화면 만들기)
 
-- [ ] Text 컴포넌트 설정
 

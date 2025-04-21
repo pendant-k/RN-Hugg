@@ -2,6 +2,7 @@ import { View, Text, SafeAreaView } from "react-native";
 import React, { useRef, useState } from "react";
 import Swiper from "react-native-swiper";
 import HGBorderedButton from "@/components/buttons/HGBorderedButton";
+import HGText from "@/components/text/HGText";
 
 const Signup = () => {
     const [progress, setProgress] = useState(0);
@@ -29,7 +30,11 @@ const Signup = () => {
         <SafeAreaView className="flex-1 bg-background-main">
             <Swiper>
                 {/* 회원가입 폼 영역 */}
-                <View className="flex-1"></View>
+                <View className="flex-1">
+                    <HGText variant="h1" className="text-gs-black">
+                        회원가입
+                    </HGText>
+                </View>
             </Swiper>
             {/* 하단 버튼 영역 */}
             <View className="h-[136px]">
