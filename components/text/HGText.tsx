@@ -30,9 +30,10 @@ const HGText = ({ variant, text, className }: Props) => {
         case "btn":
             return (
                 <Text
-                    className={clsx(
-                        "font-pretendard-semibold text-[24px] leading-[1.4]"
-                    )}
+                    // style={{ fontFamily: "Pretendard-SemiBold" }}
+                    className={
+                        "font-pretendard-semibold text-[24px] leading-none"
+                    }
                 >
                     {text}
                 </Text>
@@ -41,7 +42,8 @@ const HGText = ({ variant, text, className }: Props) => {
             return (
                 <Text
                     className={clsx(
-                        "font-pretendard-semibold text-[24px] leading-[1.4]"
+                        "font-pretendard-semibold text-[24px] leading-[1.4]",
+                        className
                     )}
                 >
                     {text}
@@ -51,7 +53,8 @@ const HGText = ({ variant, text, className }: Props) => {
             return (
                 <Text
                     className={clsx(
-                        "font-pretendard-semibold text-[20px] leading-[1.4]"
+                        "font-pretendard-semibold text-[20px] leading-[1.4]",
+                        className
                     )}
                 >
                     {text}
@@ -61,7 +64,8 @@ const HGText = ({ variant, text, className }: Props) => {
             return (
                 <Text
                     className={clsx(
-                        "font-pretendard-semibold text-[16px] leading-[1.4]"
+                        "font-pretendard-semibold text-[16px] leading-[1.4]",
+                        className
                     )}
                 >
                     {text}
@@ -70,9 +74,9 @@ const HGText = ({ variant, text, className }: Props) => {
         case "h4":
             return (
                 <Text
-                    className={clsx(
-                        "font-pretendard-semibold text-[14px] leading-[1.4]"
-                    )}
+                    className={
+                        "font-pretendard-semibold tex-[16px] leading-[1.4]"
+                    }
                 >
                     {text}
                 </Text>
@@ -81,7 +85,8 @@ const HGText = ({ variant, text, className }: Props) => {
             return (
                 <Text
                     className={clsx(
-                        "font-pretendard-medium text-[16px] leading-[1.4]"
+                        "font-pretendard-medium text-[16px] leading-[1.4]",
+                        className
                     )}
                 >
                     {text}
@@ -91,7 +96,8 @@ const HGText = ({ variant, text, className }: Props) => {
             return (
                 <Text
                     className={clsx(
-                        "font-pretendard-regular text-[16px] leading-[1.5]"
+                        "font-pretendard-regular text-[16px] leading-[1.5]",
+                        className
                     )}
                 >
                     {text}
@@ -101,7 +107,8 @@ const HGText = ({ variant, text, className }: Props) => {
             return (
                 <Text
                     className={clsx(
-                        "font-pretendard-medium text-[14px] leading-[1.4]"
+                        "font-pretendard-medium text-[14px] leading-[1.4]",
+                        className
                     )}
                 >
                     {text}
@@ -111,7 +118,8 @@ const HGText = ({ variant, text, className }: Props) => {
             return (
                 <Text
                     className={clsx(
-                        "font-pretendard-light text-[14px] leading-[1.4]"
+                        "font-pretendard-light text-[14px] leading-[1.4]",
+                        className
                     )}
                 >
                     {text}
@@ -121,7 +129,8 @@ const HGText = ({ variant, text, className }: Props) => {
             return (
                 <Text
                     className={clsx(
-                        "font-pretendard-medium text-[12px] leading-[1.4]"
+                        "font-pretendard-medium text-[12px] leading-[1.4]",
+                        className
                     )}
                 >
                     {text}
@@ -132,7 +141,8 @@ const HGText = ({ variant, text, className }: Props) => {
             return (
                 <Text
                     className={clsx(
-                        "font-pretendard-regular text-[12px] leading-[1.4]"
+                        "font-pretendard-regular text-[12px] leading-[1.4]",
+                        className
                     )}
                 >
                     {text}
@@ -142,7 +152,8 @@ const HGText = ({ variant, text, className }: Props) => {
             return (
                 <Text
                     className={clsx(
-                        "font-pretendard-regular text-[10px] leading-[1.4]"
+                        "font-pretendard-regular text-[10px] leading-[1.4]",
+                        className
                     )}
                 >
                     {text}
@@ -152,7 +163,8 @@ const HGText = ({ variant, text, className }: Props) => {
             return (
                 <Text
                     className={clsx(
-                        "font-pretendard-regular text-[8px] leading-[1.4]"
+                        "font-pretendard-regular text-[8px] leading-[1.4]",
+                        className
                     )}
                 >
                     {text}
@@ -162,7 +174,8 @@ const HGText = ({ variant, text, className }: Props) => {
             return (
                 <Text
                     className={clsx(
-                        "font-pretendard-semibold text-[40px] leading-none"
+                        "font-pretendard-semibold text-[40px] leading-none",
+                        className
                     )}
                 >
                     {text}
@@ -172,7 +185,8 @@ const HGText = ({ variant, text, className }: Props) => {
             return (
                 <Text
                     className={clsx(
-                        "font-gmarket-medium text-[40px] leading-none"
+                        "font-gmarket-medium text-[40px] leading-none",
+                        className
                     )}
                 >
                     {text}
@@ -180,7 +194,11 @@ const HGText = ({ variant, text, className }: Props) => {
             );
 
         default:
-            return <Text className={clsx()}>{text}</Text>;
+            return (
+                <Text className={clsx("font-pretendard-regular", className)}>
+                    {text}
+                </Text>
+            );
     }
 };
 
