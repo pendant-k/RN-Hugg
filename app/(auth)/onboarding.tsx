@@ -1,12 +1,13 @@
 // TODO: refac
 // TODO: 카카오 로그인 구현
 // TODO: 애플 로그인 구현
+// TODO: active dot 애니메이션 넣기
 
 import { View, SafeAreaView, Image, Animated, Pressable } from "react-native";
 import React, { useState, useRef } from "react";
 import { images } from "@/constants/images";
 import OnboardingAppBar from "@/components/onboarding/OnboardingAppBar";
-import HGBordeButton from "@/components/buttons/HGBordeButton";
+import HGBorderedButton from "@/components/buttons/HGBorderedButton";
 
 import Swiper from "react-native-swiper";
 import OnboardingSlide from "@/components/onboarding/OnboardingSlide";
@@ -24,6 +25,12 @@ const Onboarding = () => {
     const handlePrev = () => {
         if (swiperRef.current) {
             swiperRef.current.scrollBy(-1, true);
+        }
+    };
+
+    const handleSkip = () => {
+        if (swiperRef.current) {
+            swiperRef.current.scrollTo(4, true);
         }
     };
 
@@ -46,7 +53,10 @@ const Onboarding = () => {
                 loop={false}
                 showsButtons={false}
                 index={progress}
-                onIndexChanged={(index) => setProgress(index)}
+                onIndexChanged={(index) => {
+                    console.log("index", index);
+                    setProgress(index);
+                }}
                 activeDotColor="#84D1BF"
                 dotStyle={{
                     width: 8,
@@ -131,7 +141,7 @@ const Onboarding = () => {
                         </Pressable>
                     </>
                 ) : (
-                    <HGBordeButton onPress={handleNext} title="다음" />
+                    <HGBorderedButton onPress={handleNext} title="다음" />
                 )}
             </View>
         </SafeAreaView>

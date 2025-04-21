@@ -1,11 +1,41 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { View, Text, SafeAreaView } from "react-native";
+import React, { useRef, useState } from "react";
+import Swiper from "react-native-swiper";
+import HGBorderedButton from "@/components/buttons/HGBorderedButton";
 
 const Signup = () => {
+    const [progress, setProgress] = useState(0);
+    const swiperRef = useRef<Swiper>(null);
+
+    const handleNext = () => {
+        if (swiperRef.current) {
+            swiperRef.current.scrollBy(1, true);
+        }
+    };
+
+    const handlePrev = () => {
+        if (swiperRef.current) {
+            swiperRef.current.scrollBy(-1, true);
+        }
+    };
+
+    const handleSkip = () => {
+        if (swiperRef.current) {
+            swiperRef.current.scrollTo(4, true);
+        }
+    };
+
     return (
-        <View>
-            <Text>Signup</Text>
-        </View>
+        <SafeAreaView className="flex-1 bg-background-main">
+            <Swiper>
+                {/* 회원가입 폼 영역 */}
+                <View className="flex-1"></View>
+            </Swiper>
+            {/* 하단 버튼 영역 */}
+            <View className="h-[136px]">
+                <HGBorderedButton title="다음" onPress={handleNext} />
+            </View>
+        </SafeAreaView>
     );
 };
 
