@@ -30,10 +30,10 @@ const HGText = ({ variant, text, className }: Props) => {
         case "btn":
             return (
                 <Text
-                    // style={{ fontFamily: "Pretendard-SemiBold" }}
-                    className={
-                        "font-pretendard-semibold text-[24px] leading-none"
-                    }
+                    className={clsx(
+                        "font-pretendard-semibold text-[24px] leading-none",
+                        className
+                    )}
                 >
                     {text}
                 </Text>
