@@ -9,6 +9,7 @@ export default function Index() {
     const router = useRouter();
 
     // 3초 후 온보딩 화면으로 이동
+    // TODO: Add user token check
     useEffect(() => {
         const timeout = setTimeout(() => {
             router.replace("/(auth)/onboarding");
