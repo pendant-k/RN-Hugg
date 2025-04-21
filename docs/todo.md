@@ -13,6 +13,8 @@ NativeWind와 Expo Fonts로 커스텀폰트 설정하기
 - [ ] Api Service Layer 구현
 - [ ] entities (DTO, VO)
 - [x] Text 컴포넌트 설정
+- [ ] Notification (FCM, local push notification)
+- [ ] SecureStore
 
 # Splash
 - [x] Splash Screen 구현
@@ -29,7 +31,7 @@ NativeWind와 Expo Fonts로 커스텀폰트 설정하기
 - [ ] 메인 화면 + 마이페이지 화면 작업
 
 # Tabs
-- [ ] 홈 화면 UI
+- [ ] 홈 화면 UI (index)
 - [ ] 알림창 UI (Stack Navigation)
 - [ ] 마이페이지 UI
 - [ ] 캘린더 UI
@@ -37,6 +39,8 @@ NativeWind와 Expo Fonts로 커스텀폰트 설정하기
 
 
 # Mypage
+- [ ] UI
+- [ ] stack navigations
 
 > 풀스택 강의 참고 (Onboarding 화면 만들기)
 

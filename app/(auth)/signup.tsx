@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import Swiper from "react-native-swiper";
 import HGBorderedButton from "@/components/buttons/HGBorderedButton";
 import HGText from "@/components/text/HGText";
+import HGAppBar from "@/components/HGAppBar";
 
 const Signup = () => {
     const [progress, setProgress] = useState(0);
@@ -28,7 +29,17 @@ const Signup = () => {
 
     return (
         <SafeAreaView className="flex-1 bg-background-main">
-            <Swiper>
+            <HGAppBar title="회원가입" onPressBack={handlePrev} />
+            <Swiper
+                loop={false}
+                ref={swiperRef}
+                showsPagination={false}
+                showsButtons={false}
+                className="flex-1"
+                onIndexChanged={(index) => {
+                    setProgress(index);
+                }}
+            >
                 {/* 회원가입 폼 영역 */}
                 <View className="flex-1">
                     <HGText variant="h1" className="text-gs-black">

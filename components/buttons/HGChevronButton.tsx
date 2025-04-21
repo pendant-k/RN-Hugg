@@ -23,7 +23,7 @@ const HGChevronButton = ({
         <TouchableOpacity onPress={onPress}>
             <Ionicons
                 name={direction === "left" ? "chevron-back" : "chevron-forward"}
-                size={size ?? 24}
+                size={size ?? 28}
                 color={color ?? colors.gs[50]}
                 className={clsx(!visible && "opacity-0")}
             />

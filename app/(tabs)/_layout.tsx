@@ -4,9 +4,10 @@ import { Tabs } from "expo-router";
 
 const TabsLayout = () => {
     return (
-        <Tabs>
-            <Tabs.Screen name="index" />
-            <Tabs.Screen name="mypage" />
+        <Tabs screenOptions={{ headerShown: false }}>
+            <Tabs.Screen name="index" options={{ title: "홈" }} />
+            <Tabs.Screen name="(mypage)" options={{ title: "마이페이지" }} />
+            <Tabs.Screen name="ledger" options={{ title: "가계부" }} />
         </Tabs>
     );
 };
