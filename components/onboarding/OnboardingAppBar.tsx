@@ -5,6 +5,7 @@ import { clsx } from "clsx";
 import { images } from "@/constants/images";
 import HGText from "../text/HGText";
 import HGChevronButton from "../buttons/HGChevronButton";
+import { colors } from "@/constants/colors";
 
 interface Props {
     onPress: () => void;
@@ -20,14 +21,9 @@ const OnboardingAppBar = ({ onPress, onSkip, showPrev, showSkip }: Props) => {
                 onPress={onPress}
                 visible={showPrev}
                 direction="left"
+                size={28}
+                color={colors.gs[60]}
             />
-            {/* <TouchableOpacity onPress={onPress}>
-                <Image
-                    source={icons.ChevronLeft}
-                    className={clsx("size-[24px]", !showPrev && "opacity-0")}
-                    resizeMode="contain"
-                />
-            </TouchableOpacity> */}
             <Image
                 source={images.SplashLogo}
                 className="w-[86px] h-[26px]"
