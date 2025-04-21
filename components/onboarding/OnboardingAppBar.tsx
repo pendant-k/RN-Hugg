@@ -14,7 +14,7 @@ interface Props {
 
 const OnboardingAppBar = ({ onPress, onSkip, showPrev, showSkip }: Props) => {
     return (
-        <View className="flex flex-row items-center justify-between py-[15px] border-b border-gs-20 px-[26px]">
+        <View className="w-full flex flex-row items-center justify-between py-[15px] border-b border-gs-20 px-[26px]">
             <TouchableOpacity onPress={onPress}>
                 <Image
                     source={icons.ChevronLeft}
@@ -31,7 +31,9 @@ const OnboardingAppBar = ({ onPress, onSkip, showPrev, showSkip }: Props) => {
                 onPress={onSkip}
                 className={clsx(!showSkip && "opacity-0")}
             >
-                <HGText variant="h4" className="text-gs-60" text="skip" />
+                <HGText variant="h4" className="text-gs-60">
+                    skip
+                </HGText>
             </TouchableOpacity>
         </View>
     );

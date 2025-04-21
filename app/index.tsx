@@ -13,7 +13,7 @@ export default function Index() {
     useEffect(() => {
         const timeout = setTimeout(() => {
             router.replace("/(auth)/onboarding");
-        }, 3000);
+        }, 1000);
         return () => clearTimeout(timeout);
     }, []);
 

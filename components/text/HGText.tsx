@@ -21,11 +21,11 @@ type HGTextType =
 
 interface Props {
     variant: HGTextType;
-    text: string;
     className?: string;
+    children?: React.ReactNode;
 }
 
-const HGText = ({ variant, text, className }: Props) => {
+const HGText = ({ variant, className, children }: Props) => {
     const getTextStyle = () => {
         switch (variant) {
             case "h1":
@@ -51,7 +51,7 @@ const HGText = ({ variant, text, className }: Props) => {
             case "title":
                 return "font-pretendard-semibold text-[16px] leading-[1.4]";
             case "btn":
-                return "font-pretendard-semibold text-[24px] leading-[1.4]";
+                return "font-pretendard-semibold text-[24px] leading-1";
             case "p1_L":
                 return "font-pretendard-regular text-[16px] leading-[1.4]";
             case "p2_L":
@@ -61,7 +61,7 @@ const HGText = ({ variant, text, className }: Props) => {
         }
     };
 
-    return <Text className={clsx(getTextStyle(), className)}>{text}</Text>;
+    return <Text className={clsx(getTextStyle(), className)}>{children}</Text>;
 };
 
 export default HGText;
