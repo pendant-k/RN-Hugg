@@ -37,13 +37,9 @@ const Onboarding = () => {
     return (
         <SafeAreaView className="flex-1 bg-background-main">
             <OnboardingAppBar
-                onPress={handlePrev}
+                onPrev={handlePrev}
                 showPrev={progress > 0}
-                onSkip={() => {
-                    if (swiperRef.current) {
-                        swiperRef.current.scrollTo(4, true);
-                    }
-                }}
+                onSkip={handleSkip}
                 showSkip={progress < 4}
             />
             <View className="h-[16px]" />

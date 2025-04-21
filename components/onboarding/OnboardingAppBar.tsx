@@ -8,17 +8,17 @@ import HGChevronButton from "../buttons/HGChevronButton";
 import { colors } from "@/constants/colors";
 
 interface Props {
-    onPress: () => void;
+    onPrev: () => void;
     onSkip: () => void;
     showPrev: boolean;
     showSkip: boolean;
 }
 
-const OnboardingAppBar = ({ onPress, onSkip, showPrev, showSkip }: Props) => {
+const OnboardingAppBar = ({ onPrev, onSkip, showPrev, showSkip }: Props) => {
     return (
         <View className="w-full flex flex-row items-center justify-between py-[15px] border-b border-gs-20 px-[26px]">
             <HGChevronButton
-                onPress={onPress}
+                onPress={onPrev}
                 visible={showPrev}
                 direction="left"
                 size={28}
