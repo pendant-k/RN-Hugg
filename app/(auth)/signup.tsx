@@ -11,9 +11,17 @@ import AgreementContent from "@/components/auth/signup/AgreementContent";
 import PermissionContent from "@/components/auth/signup/PermissionContent";
 import SSNInputContent from "@/components/auth/signup/SSNInputContent";
 import useSignupStore from "@/stores/useSignupStore";
+import SelectSurgeryContent from "@/components/auth/signup/SelectSurgeryContent";
+import DotIndicator from "@/components/common/DotIndicator";
+import { colors } from "@/constants/colors";
+import SelectCountContent from "@/components/auth/signup/SelectCountContent";
+import SelectStartDateContent from "@/components/auth/signup/SelectStartDateContent";
+import WifeSpouseCodeContent from "@/components/auth/signup/WifeSpouseCodeContent";
+import HusbandSpouseCodeContent from "@/components/auth/signup/HusbandSpouseCodeContent";
 
 const Signup = () => {
-    const { termsAgreement, privacyAgreement, ageAgreement } = useSignupStore();
+    const { termsAgreement, privacyAgreement, ageAgreement, ssn } =
+        useSignupStore();
     const [progress, setProgress] = useState(0);
     const swiperRef = useRef<Swiper>(null);
 
@@ -31,23 +39,39 @@ const Signup = () => {
 
     const enables: Record<number, boolean> = {
         0: termsAgreement && privacyAgreement && ageAgreement,
-        1: false,
-        2: false,
-        3: false,
+        1: true,
+        2: true, // ssn.every((s) => s !== ""),
+        3: true,
+        4: true,
+        5: true,
+    };
+
+    const getSignupDotIndex = (progress: number): number => {
+        if (progress <= 2) return 0;
+        if (progress <= 5) return 1;
+        return 2;
     };
 
     return (
         <SafeAreaView className="flex-1 bg-background-main">
-            <HGAppBar title="회원가입" onPressBack={handlePrev} />
+            <HGAppBar
+                title="회원가입"
+                onPressBack={handlePrev}
+                prevButtonVisible={progress > 0}
+            />
 
             <View className="h-[38px]" />
 
             {/* 페이지 진행 표시 영역 */}
-            <View className="w-full h-[10px] flex flex-row gap-[2px] px-[16px]">
-                <View className="w-[20px] h-[10px] bg-main-sub rounded-full" />
-                <View className="w-[10px] h-[10px] bg-gs-20 rounded-full" />
-                <View className="w-[10px] h-[10px] bg-gs-20 rounded-full" />
-            </View>
+            <DotIndicator
+                currentIndex={getSignupDotIndex(progress)}
+                count={3}
+                activeWidth={20}
+                inactiveWidth={10}
+                height={10}
+                activeColor={colors.main.sub}
+                inactiveColor={colors.gs[20]}
+            />
 
             <View className="h-[16px]" />
             <Swiper
@@ -60,6 +84,7 @@ const Signup = () => {
                 onIndexChanged={(index) => {
                     setProgress(index);
                 }}
+                scrollEnabled={false}
             >
                 {/* 회원가입 폼 영역 */}
                 <View className="flex-1 px-[16px]">
@@ -72,9 +97,19 @@ const Signup = () => {
                     <SSNInputContent />
                 </View>
                 <View className="flex-1 px-[16px]">
-                    <HGText variant="h1" className="text-gs-black">
-                        회원가입
-                    </HGText>
+                    <SelectSurgeryContent />
+                </View>
+                <View className="flex-1 px-[16px]">
+                    <SelectCountContent />
+                </View>
+                <View className="flex-1 px-[16px]">
+                    <SelectStartDateContent />
+                </View>
+                <View className="flex-1 px-[16px]">
+                    <WifeSpouseCodeContent />
+                </View>
+                <View className="flex-1 px-[16px]">
+                    <HusbandSpouseCodeContent />
                 </View>
             </Swiper>
             {/* 하단 버튼 영역 */}

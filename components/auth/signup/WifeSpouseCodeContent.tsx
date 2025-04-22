@@ -3,12 +3,12 @@ import React from "react";
 import SignupSlide from "../SignupSlide";
 import HGText from "@/components/text/HGText";
 
-const SelectTreatmentContent = () => {
+const WifeSpouseCodeContent = () => {
     return (
-        <SignupSlide title={"현재 받고 있는 시술을\n선택해주세요"}>
+        <SignupSlide title={"배우자 코드를 남편에게\n공유해주세요"}>
             <View className="h-[24px]" />
         </SignupSlide>
     );
 };
 
-export default SelectTreatmentContent;
+export default WifeSpouseCodeContent;

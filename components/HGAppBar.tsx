@@ -7,15 +7,16 @@ import HGText from "./text/HGText";
 interface Props {
     title: string;
     onPressBack: () => void;
+    prevButtonVisible?: boolean;
 }
 
-const HGAppBar = ({ title, onPressBack }: Props) => {
+const HGAppBar = ({ title, onPressBack, prevButtonVisible }: Props) => {
     return (
         <View className="flex flex-row items-center justify-between px-[28px] py-[16px] border-b border-gs-20">
             <HGChevronButton
                 direction="left"
                 onPress={onPressBack}
-                visible={true}
+                visible={prevButtonVisible ?? true}
                 color={colors.gs[50]}
                 size={28}
             />
