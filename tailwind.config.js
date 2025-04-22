@@ -29,7 +29,7 @@ module.exports = {
                 main: {
                     normal: "#84D1BF",
                     light: "#B2E7DB",
-                    strong: "#5E8A8O",
+                    strong: "#5E8A80",
                     sub: "#FFD19B",
                 },
                 background: {

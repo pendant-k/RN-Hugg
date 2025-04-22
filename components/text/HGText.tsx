@@ -33,9 +33,9 @@ const HGText = ({ variant, className, children }: Props) => {
             case "h2":
                 return "font-pretendard-semibold text-[20px] leading-[1.4]";
             case "h3":
-                return "font-pretendard-semibold text-[18px] leading-[1.4]";
-            case "h4":
                 return "font-pretendard-semibold text-[16px] leading-[1.4]";
+            case "h4":
+                return "font-pretendard-semibold text-[14px] leading-[1.4]";
             case "p1":
                 return "font-pretendard-medium text-[16px] leading-[1.4]";
             case "p2":

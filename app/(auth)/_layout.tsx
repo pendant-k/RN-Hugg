@@ -1,11 +1,13 @@
 import { Stack } from "expo-router";
 import { SafeAreaView, Text } from "react-native";
 
-export default function AuthLayout() {
+function AuthLayout() {
     return (
         <Stack screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="index" />
+            <Stack.Screen name="onboarding" />
             <Stack.Screen name="signup" />
         </Stack>
     );
 }
+
+export default AuthLayout;

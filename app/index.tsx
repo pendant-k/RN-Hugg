@@ -21,7 +21,7 @@ export default function Index() {
     useEffect(() => {
         const timeout = setTimeout(() => {
             if (!DEMO_MODE) {
-                router.replace("/(auth)");
+                router.replace("/(auth)/onboarding");
             }
         }, 1000);
         return () => clearTimeout(timeout);
@@ -56,7 +56,7 @@ function DemoAppController() {
             <Button
                 title="온보딩 화면으로"
                 onPress={() => {
-                    router.push("/(auth)");
+                    router.push("/(auth)/onboarding");
                 }}
             />
             <Button

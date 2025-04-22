@@ -6,11 +6,11 @@
 import { View, SafeAreaView, Image, Animated, Pressable } from "react-native";
 import React, { useState, useRef } from "react";
 import { images } from "@/constants/images";
-import OnboardingAppBar from "@/components/onboarding/OnboardingAppBar";
+import OnboardingAppBar from "@/components/auth/OnboardingAppBar";
 import HGBorderedButton from "@/components/buttons/HGBorderedButton";
 
 import Swiper from "react-native-swiper";
-import OnboardingSlide from "@/components/onboarding/OnboardingSlide";
+import OnboardingSlide from "@/components/auth/OnboardingSlide";
 
 const Onboarding = () => {
     const [progress, setProgress] = useState(0);
