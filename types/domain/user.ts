@@ -1,9 +1,3 @@
-export interface AgreementStatus {
-    termsAgreement: boolean;
-    privacyAgreement: boolean;
-    ageAgreement: boolean;
-}
-
 export enum SurgeryType {
     THINK_SURGERY = "시술 고민 중",
     IUI = "인공수정(자궁 내 정자 주입술)",

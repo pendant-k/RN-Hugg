@@ -1,7 +1,7 @@
 import { SurgeryType } from "@/types/domain/user";
 
 export interface UserJoinRequestDTO {
-    surgeryType: SurgeryType;
+    surgeryType: string;
     count: number;
     startAt: string;
     spouseCode: string;

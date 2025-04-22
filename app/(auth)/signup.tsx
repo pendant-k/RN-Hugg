@@ -7,14 +7,13 @@ import HGBorderedButton from "@/components/buttons/HGBorderedButton";
 import HGText from "@/components/text/HGText";
 import HGAppBar from "@/components/HGAppBar";
 import InquiryText from "@/components/auth/InquiryText";
-import SignupSlide from "@/components/auth/SignupSlide";
 import AgreementContent from "@/components/auth/signup/AgreementContent";
 import PermissionContent from "@/components/auth/signup/PermissionContent";
 import SSNInputContent from "@/components/auth/signup/SSNInputContent";
-import SelectTreatmentContent from "@/components/auth/signup/SelectTreatmentContent";
-import SelectCountContent from "@/components/auth/signup/SelectCountContent";
+import useSignupStore from "@/stores/useSignupStore";
 
 const Signup = () => {
+    const { termsAgreement, privacyAgreement, ageAgreement } = useSignupStore();
     const [progress, setProgress] = useState(0);
     const swiperRef = useRef<Swiper>(null);
 
@@ -28,6 +27,13 @@ const Signup = () => {
         if (swiperRef.current) {
             swiperRef.current.scrollBy(-1, true);
         }
+    };
+
+    const enables: Record<number, boolean> = {
+        0: termsAgreement && privacyAgreement && ageAgreement,
+        1: false,
+        2: false,
+        3: false,
     };
 
     return (
@@ -66,15 +72,18 @@ const Signup = () => {
                     <SSNInputContent />
                 </View>
                 <View className="flex-1 px-[16px]">
-                    <SelectTreatmentContent />
-                </View>
-                <View className="flex-1 px-[16px]">
-                    <SelectCountContent />
+                    <HGText variant="h1" className="text-gs-black">
+                        회원가입
+                    </HGText>
                 </View>
             </Swiper>
             {/* 하단 버튼 영역 */}
             <View className="h-[136px]">
-                <HGBorderedButton title="다음" onPress={handleNext} />
+                <HGBorderedButton
+                    title="다음"
+                    onPress={handleNext}
+                    enable={enables[progress]}
+                />
                 <View className="h-[12px]" />
                 {progress === 0 && <InquiryText />}
             </View>

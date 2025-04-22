@@ -18,7 +18,7 @@ const SignupSlide = ({ title, children, customTitle }: Props) => {
                     {title ?? "타이틀"}
                 </HGText>
             )}
-            <View className="h-full">{children}</View>
+            <View className="flex-1">{children}</View>
         </>
     );
 };
