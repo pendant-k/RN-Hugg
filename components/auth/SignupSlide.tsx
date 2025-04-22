@@ -3,16 +3,21 @@ import React from "react";
 import HGText from "../text/HGText";
 
 interface Props {
-    title: string;
+    title?: string;
     children: React.ReactNode;
+    customTitle?: React.ReactNode;
 }
 
-const SignupSlide = ({ title, children }: Props) => {
+const SignupSlide = ({ title, children, customTitle }: Props) => {
     return (
         <>
-            <HGText variant="h1" className="text-gs-80">
-                {title}
-            </HGText>
+            {customTitle ? (
+                customTitle
+            ) : (
+                <HGText variant="h1" className="text-gs-80">
+                    {title ?? "타이틀"}
+                </HGText>
+            )}
             <View className="h-full">{children}</View>
         </>
     );

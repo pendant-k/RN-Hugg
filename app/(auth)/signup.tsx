@@ -10,6 +10,9 @@ import InquiryText from "@/components/auth/InquiryText";
 import SignupSlide from "@/components/auth/SignupSlide";
 import AgreementContent from "@/components/auth/signup/AgreementContent";
 import PermissionContent from "@/components/auth/signup/PermissionContent";
+import SSNInputContent from "@/components/auth/signup/SSNInputContent";
+import SelectTreatmentContent from "@/components/auth/signup/SelectTreatmentContent";
+import SelectCountContent from "@/components/auth/signup/SelectCountContent";
 
 const Signup = () => {
     const [progress, setProgress] = useState(0);
@@ -60,9 +63,13 @@ const Signup = () => {
                     <PermissionContent />
                 </View>
                 <View className="flex-1 px-[16px]">
-                    <HGText variant="h1" className="text-gs-black">
-                        회원가입
-                    </HGText>
+                    <SSNInputContent />
+                </View>
+                <View className="flex-1 px-[16px]">
+                    <SelectTreatmentContent />
+                </View>
+                <View className="flex-1 px-[16px]">
+                    <SelectCountContent />
                 </View>
             </Swiper>
             {/* 하단 버튼 영역 */}
