@@ -9,7 +9,7 @@ interface Props {
     enable?: boolean;
 }
 
-const HGBorderedButton = ({ onPress, title, enable = true }: Props) => {
+const HGBorderedButton = ({ onPress, title, enable }: Props) => {
     return (
         <View className="w-full px-[16px]">
             <ScalePressable

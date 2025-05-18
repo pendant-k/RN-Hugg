@@ -7,6 +7,7 @@ import * as Linking from "expo-linking";
 import { urls } from "@/constants/urls";
 import HGChevronButton from "@/components/buttons/HGChevronButton";
 import useSignupStore from "@/stores/useSignupStore";
+import HGBorderedButton from "@/components/buttons/HGBorderedButton";
 
 const AgreementContent = () => {
     const {

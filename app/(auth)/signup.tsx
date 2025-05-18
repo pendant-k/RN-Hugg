@@ -26,6 +26,12 @@ const Signup = () => {
     const swiperRef = useRef<Swiper>(null);
 
     const handleNext = () => {
+        // permission일 경우에만 분기 필요함
+        if (progress === 1) {
+            // permission handler here
+            console.log("permission handler");
+        }
+
         if (swiperRef.current) {
             swiperRef.current.scrollBy(1, true);
         }
@@ -37,6 +43,7 @@ const Signup = () => {
         }
     };
 
+    // 다음 버튼 활성화 여부
     const enables: Record<number, boolean> = {
         0: termsAgreement && privacyAgreement && ageAgreement,
         1: true,
@@ -46,6 +53,7 @@ const Signup = () => {
         5: true,
     };
 
+    // dot indicator 인덱스 계산 (Figma 기준)
     const getSignupDotIndex = (progress: number): number => {
         if (progress <= 2) return 0;
         if (progress <= 5) return 1;
