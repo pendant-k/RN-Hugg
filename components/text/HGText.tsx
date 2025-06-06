@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import React from "react";
 import clsx from "clsx";
 
-type HGTextType =
+export type HGTextType =
     | "btn"
     | "h1"
     | "h2"
