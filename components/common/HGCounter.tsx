@@ -1,20 +1,43 @@
-import { View, Text } from "react-native";
-import React, { useState } from "react";
+import { View, Pressable } from "react-native";
+import React from "react";
+import HGText from "../text/HGText";
+import clsx from "clsx";
 
-/**
- * number 값 입력 시 사용되는 카운터 컴포넌트
- */
-const HGCounter = () => {
-    const [count, setCount] = useState(0);
+// TODO: 텍스트 -> 아이콘 이미지로 수정
+
+interface Props {
+    count: number;
+    onIncrease: () => void;
+    onDecrease: () => void;
+}
+
+const HGCounter = ({ count, onIncrease, onDecrease }: Props) => {
     return (
-        <View className="flex-row items-center justify-center gap-[8px]">
-            <View className="size-[48px] bg-[#F2F2F2] rounded-[4px]">
-                <Text>-</Text>
+        <View className="flex-row items-center justify-center w-[168px]">
+            <Pressable
+                className={clsx(
+                    "size-[48px] bg-main-normal rounded-l-[8px] items-center justify-center",
+                    count === 0 && "bg-status-disabled"
+                )}
+                onPress={onDecrease}
+            >
+                <HGText variant="h1" className="text-white text-[32px]">
+                    -
+                </HGText>
+            </Pressable>
+            <View className="flex-1 flex-row items-center justify-center bg-white h-[48px]">
+                <HGText variant="h3" className="text-gs-90">
+                    {count}
+                </HGText>
             </View>
-            <Text>{count}</Text>
-            <View className="size-[48px] bg-gs-10 rounded-[4px]">
-                <Text>+</Text>
-            </View>
+            <Pressable
+                className="size-[48px] bg-main-normal rounded-r-[8px] items-center justify-center"
+                onPress={onIncrease}
+            >
+                <HGText variant="h1" className="text-white text-[32px]">
+                    +
+                </HGText>
+            </Pressable>
         </View>
     );
 };
