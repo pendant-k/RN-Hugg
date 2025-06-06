@@ -17,7 +17,7 @@ interface DropdownProps {
     selectedItem?: SurgeryType | null;
 }
 
-const Dropdown = ({
+const HGDropdown = ({
     items,
     onSelect,
     placeholder = "선택해주세요",
@@ -83,4 +83,4 @@ const Dropdown = ({
     );
 };
 
-export default Dropdown;
+export default HGDropdown;
