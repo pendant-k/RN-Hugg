@@ -20,11 +20,14 @@ import WifeSpouseCodeContent from "@/components/auth/signup/WifeSpouseCodeConten
 import HusbandSpouseCodeContent from "@/components/auth/signup/HusbandSpouseCodeContent";
 
 const Signup = () => {
-
     const { termsAgreement, privacyAgreement, ageAgreement, ssn } =
         useSignupStore();
     const [progress, setProgress] = useState(0);
     const swiperRef = useRef<Swiper>(null);
+
+    const isAllDigits = (str: string): boolean => {
+        return /^\d+$/.test(str);
+    };
 
     const handleNext = () => {
         // permission일 경우에만 분기 필요함
@@ -48,7 +51,7 @@ const Signup = () => {
     const enables: Record<number, boolean> = {
         0: termsAgreement && privacyAgreement && ageAgreement,
         1: true,
-        2: true, // ssn.every((s) => s !== ""),
+        2: ssn.length === 7 && isAllDigits(ssn),
         3: true,
         4: true,
         5: true,

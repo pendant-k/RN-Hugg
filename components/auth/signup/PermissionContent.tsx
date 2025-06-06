@@ -4,6 +4,9 @@ import SignupSlide from "../SignupSlide";
 import HGText from "@/components/text/HGText";
 import { Ionicons } from "@expo/vector-icons";
 import { colors } from "@/constants/colors";
+
+// TODO: 접근 권한 요청 기능 추가
+
 const PermissionContent = () => {
     return (
         <SignupSlide title={"앱 접근 권한을 안내드려요"}>
