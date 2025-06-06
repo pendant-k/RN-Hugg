@@ -20,6 +20,7 @@ import WifeSpouseCodeContent from "@/components/auth/signup/WifeSpouseCodeConten
 import HusbandSpouseCodeContent from "@/components/auth/signup/HusbandSpouseCodeContent";
 
 const Signup = () => {
+
     const { termsAgreement, privacyAgreement, ageAgreement, ssn } =
         useSignupStore();
     const [progress, setProgress] = useState(0);
