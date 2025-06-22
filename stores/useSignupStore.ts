@@ -17,6 +17,7 @@ export interface SignupState {
     setFCMToken: (fcmToken: string) => void;
     setSurgeryType: (surgeryType: SurgeryType) => void;
     setCurrentCount: (currentCount: number) => void;
+    setStartAt: (startAt: Date) => void;
 }
 
 const useSignupStore = create<SignupState>((set) => ({
@@ -40,6 +41,7 @@ const useSignupStore = create<SignupState>((set) => ({
         set((state) => ({ ...state, surgeryType })),
     setCurrentCount: (currentCount: number) =>
         set((state) => ({ ...state, currentCount })),
+    setStartAt: (startAt: Date) => set((state) => ({ ...state, startAt })),
 }));
 
 export default useSignupStore;

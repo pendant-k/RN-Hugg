@@ -12,7 +12,7 @@ const SignupSlide = ({ title, children, customTitle }: Props) => {
     return (
         <>
             {customTitle ? (
-                customTitle
+                <Text>{customTitle}</Text>
             ) : (
                 <HGText variant="h1" className="text-gs-80">
                     {title ?? "타이틀"}

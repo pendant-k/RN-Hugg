@@ -22,6 +22,7 @@ import HusbandSpouseCodeContent from "@/components/auth/signup/HusbandSpouseCode
 const Signup = () => {
     const { termsAgreement, privacyAgreement, ageAgreement, ssn } =
         useSignupStore();
+
     const [progress, setProgress] = useState(0);
     const swiperRef = useRef<Swiper>(null);
 
@@ -86,6 +87,7 @@ const Signup = () => {
             />
 
             <View className="h-[16px]" />
+
             <Swiper
                 loop={false}
                 ref={swiperRef}
